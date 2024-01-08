@@ -1,0 +1,1 @@
+{X=-1707,Y=0,Width=1280,Height=800}{X=0,Y=0,Width=1707,Height=960}

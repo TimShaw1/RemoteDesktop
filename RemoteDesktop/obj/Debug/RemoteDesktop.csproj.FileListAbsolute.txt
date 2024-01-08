@@ -1,0 +1,10 @@
+C:\projects\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.AssemblyReference.cache
+C:\projects\RemoteDesktop\RemoteDesktop\obj\Debug\WindowsFormsApp2.mainFrm.resources
+C:\projects\RemoteDesktop\RemoteDesktop\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\projects\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.GenerateResource.cache
+C:\projects\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.CoreCompileInputs.cache
+C:\projects\RemoteDesktop\RemoteDesktop\bin\Debug\RemoteDesktop.exe.config
+C:\projects\RemoteDesktop\RemoteDesktop\bin\Debug\RemoteDesktop.exe
+C:\projects\RemoteDesktop\RemoteDesktop\bin\Debug\RemoteDesktop.pdb
+C:\projects\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.exe
+C:\projects\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.pdb
