@@ -36,8 +36,13 @@ namespace WindowsFormsApp2
             var cursorPos = Cursor.Position;
             Screen currentScreen = Screen.FromPoint(cursorPos);
             int index = screens.FindIndex(screen => screen.Bounds.X==currentScreen.Bounds.X);
-            if (index < screens.Count-1)
-                SetCursorPos(screens[index+1].Bounds.X + (int)(screens[index+1].Bounds.Width / 2), cursorPos.Y);
+            if (index < screens.Count - 1)
+            {
+                SetCursorPos(screens[index + 1].Bounds.X + (int)(screens[index + 1].Bounds.Width / 2), cursorPos.Y);
+                this.WindowState = FormWindowState.Normal;
+                this.Location = screens[index + 1].Bounds.Location;
+                this.WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void leftBtn_Click(object sender, EventArgs e)
@@ -46,7 +51,13 @@ namespace WindowsFormsApp2
             Screen currentScreen = Screen.FromPoint(cursorPos);
             int index = screens.FindIndex(screen => screen.Bounds == currentScreen.Bounds);
             if (index > 0)
+            {
                 SetCursorPos(screens[index - 1].Bounds.X + (int)(screens[index - 1].Bounds.Width / 2), cursorPos.Y);
+                this.WindowState = FormWindowState.Normal;
+                this.Location = this.Location = screens[index - 1].Bounds.Location;
+                this.WindowState = FormWindowState.Maximized;
+            }
+
         }
 
         [DllImport("User32.dll")]
