@@ -39,24 +39,10 @@ namespace WindowsFormsApp2
             var cursorPos = Cursor.Position;
             Screen currentScreen = Screen.FromPoint(cursorPos);
             int index = screens.FindIndex(screen => screen.Bounds.X==currentScreen.Bounds.X);
-            try
-            {
-                SetCursorPos(screens[index + 1].Bounds.X + (int)(screens[index + 1].Bounds.Width / 2), cursorPos.Y);
-                this.WindowState = FormWindowState.Normal;
-                this.Location = screens[index + 1].Bounds.Location;
-                this.WindowState = FormWindowState.Maximized;
-            }
-            catch
-            {
-                try
-                {
-                    SetCursorPos(screens[index - 1].Bounds.X + (int)(screens[index - 1].Bounds.Width / 2), cursorPos.Y);
-                    this.WindowState = FormWindowState.Normal;
-                    this.Location = this.Location = screens[index - 1].Bounds.Location;
-                    this.WindowState = FormWindowState.Maximized;
-                }
-                catch { }
-            }
+            SetCursorPos(screens[(index + 1)%(screens.Count)].Bounds.X + (int)(screens[(index + 1) % (screens.Count)].Bounds.Width / 2), cursorPos.Y);
+            this.WindowState = FormWindowState.Normal;
+            this.Location = screens[index + 1].Bounds.Location;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void leftBtn_Click(object sender, EventArgs e)
@@ -64,25 +50,10 @@ namespace WindowsFormsApp2
             var cursorPos = Cursor.Position;
             Screen currentScreen = Screen.FromPoint(cursorPos);
             int index = screens.FindIndex(screen => screen.Bounds == currentScreen.Bounds);
-            try
-            {
-
-                SetCursorPos(screens[index - 1].Bounds.X + (int)(screens[index - 1].Bounds.Width / 2), cursorPos.Y);
-                this.WindowState = FormWindowState.Normal;
-                this.Location = this.Location = screens[index - 1].Bounds.Location;
-                this.WindowState = FormWindowState.Maximized;
-            }
-            catch
-            {
-                try
-                {
-                    SetCursorPos(screens[index + 1].Bounds.X + (int)(screens[index + 1].Bounds.Width / 2), cursorPos.Y);
-                    this.WindowState = FormWindowState.Normal;
-                    this.Location = screens[index + 1].Bounds.Location;
-                    this.WindowState = FormWindowState.Maximized;
-                }
-                catch { }
-            }
+            SetCursorPos(screens[(index - 1) % (screens.Count)].Bounds.X + (int)(screens[(index - 1) % (screens.Count)].Bounds.Width / 2), cursorPos.Y);
+            this.WindowState = FormWindowState.Normal;
+            this.Location = this.Location = screens[index - 1].Bounds.Location;
+            this.WindowState = FormWindowState.Maximized;
 
         }
 
