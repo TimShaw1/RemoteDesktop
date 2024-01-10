@@ -20,6 +20,8 @@ namespace WindowsFormsApp2
         {
             screens = getScreenListSorted();
             InitializeComponent();
+            Screen primaryScreen = Screen.PrimaryScreen;
+            SetCursorPos(primaryScreen.Bounds.X + (int)(primaryScreen.Bounds.Width / 2), (int)(primaryScreen.Bounds.Height)/2);
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
