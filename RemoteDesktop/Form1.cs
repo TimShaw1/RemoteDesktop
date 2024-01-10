@@ -50,9 +50,11 @@ namespace WindowsFormsApp2
             var cursorPos = Cursor.Position;
             Screen currentScreen = Screen.FromPoint(cursorPos);
             int index = screens.FindIndex(screen => screen.Bounds == currentScreen.Bounds);
-            SetCursorPos(screens[(index - 1) % (screens.Count)].Bounds.X + (int)(screens[(index - 1) % (screens.Count)].Bounds.Width / 2), cursorPos.Y);
+            int newIndex = (index - 1) % (screens.Count) >= 0 ? (index - 1) % (screens.Count) : -((index - 1) % (screens.Count));
+
+            SetCursorPos(screens[newIndex].Bounds.X + (int)(screens[newIndex].Bounds.Width / 2), cursorPos.Y);
             this.WindowState = FormWindowState.Normal;
-            this.Location = this.Location = screens[(index - 1) % (screens.Count)].Bounds.Location;
+            this.Location = this.Location = screens[newIndex].Bounds.Location;
             this.WindowState = FormWindowState.Maximized;
 
         }
