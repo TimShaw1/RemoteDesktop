@@ -41,7 +41,7 @@ namespace WindowsFormsApp2
             int index = screens.FindIndex(screen => screen.Bounds.X==currentScreen.Bounds.X);
             SetCursorPos(screens[(index + 1)%(screens.Count)].Bounds.X + (int)(screens[(index + 1) % (screens.Count)].Bounds.Width / 2), cursorPos.Y);
             this.WindowState = FormWindowState.Normal;
-            this.Location = screens[index + 1].Bounds.Location;
+            this.Location = screens[(index + 1) % (screens.Count)].Bounds.Location;
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -52,7 +52,7 @@ namespace WindowsFormsApp2
             int index = screens.FindIndex(screen => screen.Bounds == currentScreen.Bounds);
             SetCursorPos(screens[(index - 1) % (screens.Count)].Bounds.X + (int)(screens[(index - 1) % (screens.Count)].Bounds.Width / 2), cursorPos.Y);
             this.WindowState = FormWindowState.Normal;
-            this.Location = this.Location = screens[index - 1].Bounds.Location;
+            this.Location = this.Location = screens[(index - 1) % (screens.Count)].Bounds.Location;
             this.WindowState = FormWindowState.Maximized;
 
         }
